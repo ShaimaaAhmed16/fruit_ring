@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
+
+html,body{
+    font-family: 'Cairo', sans-serif;
+    background-color: #f8f8f8;
+}
+
+.bg-light-green{
+    background-color: #8cc540;
+}
+.bg-gray{
+    background-color: #f8f8f8;
+}
+.bg-red{
+  background-color: #551313;
+}
+.bg-black{
+  background-color: #000;
+}
+
+.text-light-green{
+    color: #8cc540;
+}
+.text-silver{
+    color: #b2b6bc;
+}
+.text-black{
+  color: #000;
+}
+.text-blue{
+  color: #1d4f8b;
+}
+::placeholder{
+  text-align: right;
+  font-size: 16px;
+}
+/*=============*/
+.header .card{
+    border-radius: 0 !important;
+    box-shadow: 1px 1px 1px #8cc540;
+}
+.container-menu{
+    background-color: #8cc540;
+}
+.searchContainer {
+    display: grid;
+    grid-template-columns:1.5rem 4fr 1fr;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px #8cc540;
+  }
+  
+  .searchContainer:focus-within i {
+    display: none;
+  }
+  
+  .searchContainer:focus-within .searchBox{
+    grid-column:1/4;
+  }
+  
+  .searchContainer:focus-within .searchBox::placeholder {
+    color:transparent;
+  }
+  
+  .searchIcon {
+    padding: 0.5rem;
+    grid-row:1;
+    grid-column:1/2;
+    z-index:2
+  }
+  
+  .searchBox {
+    border: 0;
+    background-color: #fff;
+    padding: 0.5rem;
+    grid-column:2/4;
+    grid-row:1;
+    outline:none;
+  }
+.filter.card{
+    border-radius: 0 !important;
+}
+.filter a{
+    color: #ccc;
+}
+.filter a:hover{
+    color: #8cc540;
+}
+a:hover{
+    text-decoration: none;
+}
+.border-bottom{
+    border-bottom: 10px solid #ffd208;
+}
+nav{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+nav .nav-link span{
+    background-color: #8cc540;
+    border-radius: 50%;
+}
+nav a:hover{
+    color: #909499;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #02020f;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 32px 8px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    text-align: right;
+    position: relative;
+  }
+  
+  .sidenav a:hover {
+    color: #b4afaf;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 22px;
+    margin-left: 10px;
+  }
+  .sidenav a .user-icon{
+      border-radius: 50%;
+  }
+  .sidenav .user i{
+      position: absolute;
+      right: 35;
+      bottom: 5;
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 10px;}
+    
+  }
+.content{
+    margin-bottom: 100px;
+}
+.content button{
+    color: #ccc;
+}
+.content-large{
+   margin-bottom: 100px;
+}
+.content-large button{
+    color: #ccc;
+}
+.content-large .btn-sm{
+    border-radius: 20px;
+}
+.fillter a:hover{
+  color: #8cc540;
+}
+/*buy*/
+.buy{
+  margin-bottom: 100px;
+}
+.buy button{
+  border: 1px solid #8cc540;
+}
+.buy .btn-group{
+  border-radius: 30px !important;
+}
+.buy .card{
+  position: relative;
+}
+.buy .card span.about-product{
+  position: absolute;
+  right: 0;
+  top: -40px;
+  background-color: #fff;
+  padding: 5px 15px;
+}
+/*products*/
+.product{
+  margin-bottom: 100px;
+}
+.product a.btn-sm{
+  background-color: #eef2f5;
+  border-radius: 20px;
+}
+/*shopcart*/
+.shopcart label{
+  border-radius: 20px;
+}
+/*shopcart1*/
+.shopcart1 .true{
+  border-radius: 50% !important;
+  border: 2px solid #0bc50b;
+  box-shadow: 1px 1px 1px #ccc;
+}
+.shopcart1 .btn-group{
+  box-shadow: 1px 1px 1px #ccc;
+  border-radius: 20px;
+  border: 1px solid #ffd208;
+}
+.shopcart1 .btn-group button{
+  border: 1px solid #ffd208;
+  border-radius: 20px;
+}
+.shopcart1 .img{
+  border: 1px solid #ffd208;
+  width: 50px;
+  height: 50px;
+}
+/*account*/
+.account{
+  margin-bottom: 100px;
+  padding: 0 10%;
+}
+.account img{
+  border-radius: 50%;
+}
+/*update info*/
+.update{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.update .card{
+  margin: 0 35%;
+}
+.update .card img{
+  border-radius: 50%;
+  padding: 20px 0;
+}
+.update .form-group{
+  margin: 30px 80px;
+}
+.update input{
+  border-radius: 20px;
+}
+.update form button{
+  background:#0bc50b;
+  text-align: center !important;
+  width: 65%;
+  margin: 0 auto;
+  border-radius: 20px;
+
+}
+/*about*/
+.about{
+  margin-bottom: 100px;
+}
+/*contact*/
+.contact{
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+.contact .card{
+  margin: 0px 70px;
+}
+.contact form{
+  margin: 30px 70px;
+}
+.contact form input,
+.contact form textarea{
+  border-radius: 20px;
+}
+.contact form button{
+  background:#0bc50b;
+  text-align: center !important;
+  margin: 0 auto;
+  border-radius: 20px;
+
+}
+/*intro*/
+.intro{
+  background: url(../images/bac.png) center no-repeat;
+  background-size: cover;
+  padding-bottom: 30px;
+}
+.intro .btn-group{
+  border-radius: 20px;
+  background:#fff;
+  border: 1px solid #ffd208;
+  width: 250px;
+}
+.intro a{
+  width: 250px;
+  border-radius: 20px;
+}
+/*signin*/
+.signin{
+  margin-bottom: 80px;
+}
+.signin form input,
+.signin form a,
+.signin form button{
+  border-radius: 20px;
+}
+.signin button.btn-secondary{
+  background-color: #c7c7c7 !important;
+}
+@media screen and (max-width:320px){
+  html,body,button,h3,h5,h6,small,span{
+    font-size:75%;
+  }
+  label{
+    font-size: 65%;
+  }
+  nav{
+    font-size: 75%;
+  }
+  .card small{
+    font-size: 65%;
+  }
+  #mySidenav .user img{
+    width: 20%;
+  }
+  a.btn{
+    font-size: 80%;
+  }
+  .buy .btn{
+    font-size: 70%;
+  }
+  img{
+    width: 40%;
+  }
+  ::placeholder{
+    font-size: 60%;
+  }
+  .update .card{
+    width: 30%;
+  }
+  .buy .card span.about-product{
+    top: -20px;
+  }
+}
+@media screen and (max-width:425px){
+  html,body,button,h3,h5,h6,small,span{
+    font-size:80%;
+  }
+  #mySidenav .user img{
+    width: 20%;
+  }
+  a.btn{
+    font-size: 80%;
+  }
+  img{
+    width: 50%;
+  }
+  ::placeholder{
+    font-size: 60%;
+  }
+  .buy .card span.about-product{
+    top: -18px;
+  }
+}
+@media screen and(max-width:768px){
+  img{
+    width: 100%;
+  }
+}
+@media screen and (min-width:1024px){
+  header h6{
+    font-size: 26px;
+  }
+}
