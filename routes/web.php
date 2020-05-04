@@ -66,6 +66,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
         Route::resource('product', 'ProductController');
         Route::resource('client', 'ClientController');
+//        Route::get('ajaxdata/removedata', 'ClientController@removedata')->name('ajaxdata.removedata');
         Route::get('client/{id}/active', 'ClientController@active');
         Route::get('client/{id}/deactive', 'ClientController@deactive');
         Route::resource('link', 'LinkController');

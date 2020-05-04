@@ -125,12 +125,22 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+    function removedata(Request $request)
     {
-        $record=Client::findOrFail($id);
-        $record->delete();
-        flash()->success(' تم الحذف بنجاح');
-        return redirect()->route('client.index');
+        $student = Client::find($request->input('id'));
+        if($student->delete())
+        {
+            echo 'Data Deleted';
+        }
+    }
+
+    public function destroy($id )
+    {
+//        $record=Client::findOrFail($id);
+//        $record->delete();
+//        flash()->success(' تم الحذف بنجاح');
+//        return redirect()->route('client.index');
 
     }
 

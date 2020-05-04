@@ -22,8 +22,8 @@
                 <div class="col-4 text-center">
                     {!! Form::open(['action'=>'Front\MainController@index','method'=>'get']) !!}
 
-                    <input class=" form-control" type="hidden" name="category_id" value="{{$category->id}}">
-                    <button type="submit" class="text-white border-0 bg-gray" style="background-color:#8cc540">
+                    <input class=" form-control " type="hidden" name="category_id" value="{{$category->id}}">
+                    <button type="submit" class="text-white border-0  " style="background-color:#8cc540">
                         <i class="fab fa-pagelines"></i><br>
                         <span>{{$category->name}}</span>
                     </button>

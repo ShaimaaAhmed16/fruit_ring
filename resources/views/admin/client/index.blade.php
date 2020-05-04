@@ -68,8 +68,10 @@
                                             <a href="{{url(route('client.edit',$record->id))}}" class="btn btn-primary btn-xs" alt="تعديل المنتج"><i class="fa fa-edit"></i></a>
                                         </th >
                                         <th>
+                                    {{--<a href="#" class="btn btn-xs btn-danger delete" id="'.$student->id.'"><i class="glyphicon glyphicon-remove"></i> Delete</a>--}}
                                             {!! Form::open(['action'=>['Admin\ClientController@destroy',$record->id],'method'=>'delete']) !!}
-                                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+
+                                            <button class="btn btn-danger btn-xs destroy"><i class="fa fa-trash"></i></button>
                                             {!! Form::close() !!}
                                         </th>
                                     </tr>
