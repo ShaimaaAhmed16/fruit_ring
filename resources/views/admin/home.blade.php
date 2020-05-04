@@ -53,7 +53,7 @@
         <!-- Logo -->
         <a href="" class="logo" style="background-color:   #00e600 !important;">
             <!-- logo for regular state and mobile devices -->
-            <img src="{{asset('front/images/tt.png')}}"
+            <img src="{{asset('adminlte/dist/img/tt.png')}}"
                  alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity: .8" width="60">
@@ -73,45 +73,21 @@
                     <a href="{{url('/home')}}" class="nav-link "><i class="fa fa-home "></i>   الرئسيه</a>
                 </li>
             </ul>
-            <div class="navbar-custom-menu">
-
-                <ul class="nav navbar-nav">
-                        <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{asset('adminlte/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
-                            <span class="hidden-xs">{{auth('web')->user()->name}}</span>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header">
-                                <img src="{{asset('adminlte/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-
-                                <p>
-                                    {{auth('web')->user()->name}}
-                                    {{--<small>admin</small>--}}
-                                </p>
-                            </li>
-                            <!-- Menu Body -->
-
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="{{route('profile.user',auth()->guard('web')->user()->id)}}" class="btn btn-default btn-flat">ملفي الشخصي</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="{{route('logout.admin')}}" class="btn btn-default btn-flat"><i class="fa fa-arrow"></i>تسجيل خروج</a>
-                                </div>
-                            </li>
+            <div class="navbar-custom-menu ">
+                <ul class="nav navbar-nav  " >
+                    <!-- user login dropdown start-->
+                    <li class="dropdown  pt-5" >
+                        <ul data-toggle="dropdown" class="dropdown-toggle  " href="#"  >
+                            <span class="username ">{{auth()->guard('web')->user()->name}}</span>
+                            <b class="caret"></b>
+                        </ul>
+                        <ul class="dropdown-menu extended logout text-center mr-1">
+                           <li><a href="{{route('profile.user',auth()->guard('web')->user()->id)}}"><i class="fa fa-user"></i> ملفي الشخصي</a></li>
+                            <li><a href="{{route('change.password')}}"><i class="fa fa-key"></i>تعديل كلمه السر</a></li><hr>
+                            <li><a href="{{route('logout.admin')}}"><i class="fa fa-arrow"></i>تسجيل خروج</a></li>
                         </ul>
                     </li>
-                    <!-- Control Sidebar Toggle Button -->
 
-                    {{--notifications--}}
-                    {{--<li>--}}
-                    {{--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>--}}
-                    {{--</li>--}}
                 </ul>
             </div>
         </nav>
@@ -171,6 +147,20 @@
 
                 <li class="treeview">
                     <a href="#">
+                        <i class="fa fa-book"></i>
+                        <span>الطلبات</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-left"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('order.index')}}" ><i class="fa fa-circle-o"></i>عرض الطلبات</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
                         <i class="fa fa-phone-square"></i>
                         <span>بيانات التواصل</span>
                         <span class="pull-right-container">
@@ -197,7 +187,7 @@
                     </ul>
                 </li>
 
-                <li><a href="{{route('change.password')}}"><i class="fa fa-key"></i> <span>change password</span></a></li>
+                {{--<li><a href="{{route('change.password')}}"><i class="fa fa-key"></i> <span>تغيير كلمه السر</span></a></li>--}}
             </ul>
 
                 {{--<li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Settings</span></a></li>--}}
@@ -446,6 +436,7 @@
 
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>--}}
 <script src="{{asset('jquery_confirm/jquery-confirm.min.js')}}"></script>
+<script src="{{asset('public/js/script.js')}}"></script>
 
 {{--<script src="{{asset('js/admin.js')}}"></script>--}}
 

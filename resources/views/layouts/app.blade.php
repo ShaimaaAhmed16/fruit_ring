@@ -34,6 +34,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li><h4> الثمار الوطنيه جده</h4></li>
+                        <img src="{{asset('adminlte/dist/img/tt.png')}}" alt="AdminLTE Logo"
+                             class="brand-image img-circle elevation-3" style="opacity: .8" width="50">
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -41,11 +43,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('حساب جديد') }}</a>
                                 </li>
                             @endif
                         @else

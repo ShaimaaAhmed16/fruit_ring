@@ -21,11 +21,11 @@
                 @csrf
                 <div class="form-group text-right">
 
-                    <input type="email" class="form-control" placeholder="البريد الالكترونى" name="email">
+                    <input type="email" class="form-control text-right" placeholder="البريد الالكترونى" name="email">
                 </div>
                 <div class="form-group text-right">
 
-                    <input type="tel" class="form-control"placeholder="كلمة المرور" name="password">
+                    <input type="password" class="form-control text-right"placeholder="كلمة المرور" name="password">
                 </div>
                 <div class="form-check text-center mt-4 mb-4">
                     <label class="form-check-label mr-4">
