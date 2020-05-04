@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('status', array('فعال','منتهي', 'ملغي'));
+            $table->enum('status', array('فعال','منتهي', 'ملغي','منتظر'));
             $table->integer('total');
             $table->unsignedBigInteger('client_id')->nullable();
             $table->timestamps();

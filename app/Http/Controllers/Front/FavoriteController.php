@@ -9,13 +9,16 @@ use Illuminate\Support\Facades\Auth;
 class FavoriteController extends Controller
 {
     public function favorite($id){
-        Auth::user()->products()->toggle($id);
-//        $request->user()->posts()->toggle($request->post_id);
+//        dd(Auth::guard('client-web')->user());
+        Auth::guard('client-web')->user()->products()->toggle($id);
         return back();
     }
     public function listFavorite(){
-        $products=Auth::guest('client-web')->favorites;
-        dd($products);
-       return view('front.favorite',compact('products'));
+        $products=Auth::guard('client-web')->user()->products;
+//        dd($products);
+       return view('front.favorites',compact('products'));
     }
+//    public function destroy($id){
+//        dd('ss');
+//    }
 }

@@ -12,30 +12,24 @@
                         <i class="fa fa-search searchIcon"></i>
                         <input class="searchBox form-control" type="search" name="name">
                     </div>
-                    <button class="btn btn-success mt-1 ml-2" type="submit"><i class="fa fa-search"></i></button>
+                    <button class="btn  mt-1 ml-2" type="submit"><i class="fa fa-search"></i></button>
                     {!! Form::close() !!}
                 </div>
             </div>
             <div class="row pt-2 pb-1">
-                <div class="col-4 text-center">
-                    <a href="#" class="text-white">
-                        <i class="fab fa-pagelines"></i><br>
-                        <span>ورقيات</span>
-                    </a>
+                @foreach($categories as $category)
+                    <div class="col-4 text-center">
+                        {!! Form::open(['action'=>'Front\MainController@index','method'=>'get']) !!}
 
-                </div>
-                <div class="col-4 text-center">
-                    <a href="#" class="text-white">
-                        <i class="fas fa-seedling"></i><br>
-                        <span>خضروات</span>
-                    </a>
-                </div>
-                <div class="col-4 text-center">
-                    <a href="#" class="text-white">
-                        <i class="fas fa-apple-alt"></i><br>
-                        <span class="border-bottom">فواكة</span>
-                    </a>
-                </div>
+                        <input class=" form-control" type="hidden" name="category_id" value="{{$category->id}}">
+                        <button type="submit" class="text-white border-0 bg-gray" style="background-color:#8cc540">
+                            <i class="fab fa-pagelines"></i><br>
+                            <span>{{$category->name}}</span>
+                        </button>
+
+                        {!! Form::close() !!}
+                    </div> @endforeach
+
             </div>
         </div>
 

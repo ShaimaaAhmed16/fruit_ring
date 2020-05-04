@@ -42,11 +42,13 @@ class AuthController extends Controller
            'phone' => $request->phone,
            'password' => Hash::make($request->password),
        ]);
+       $user->save();
        if ($user){
-//           flash()->success('created');
+            auth('client-web')->login($user);
            return redirect()->route('index');
-       }else{
-//           flash()->error('no created');
+       }
+       else{
+           flash()->error('يوجد خطا في البيانات');
            return back();
        }
    }

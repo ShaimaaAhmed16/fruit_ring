@@ -3,11 +3,11 @@
 @section('content')
 <div class="container text-right mt-5 fillter">
     <div>
-        <a href="main - Copy.html" class="text-black">الاكثر طلبا</a>
+        <a href="{{ route('main', ['sort'=>' num_of_orders']) }}" class="text-black">الاكثر طلبا</a>
         <hr>
     </div>
     <div>
-        <a href="main - Copy.html" class="text-black">الاعلى مشاهدة</a>
+        <a  href="{{ route('main', ['sort'=>' num_of_views']) }}" class="text-black">الاعلى مشاهدة</a>
         <hr>
     </div>
 
