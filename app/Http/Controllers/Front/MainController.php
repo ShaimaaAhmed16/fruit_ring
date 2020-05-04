@@ -112,7 +112,7 @@ class MainController extends Controller
     public function addOrder(Request $request){
 
         $order = Order::create([
-            'client_id' => auth()->user('client-web')->id,
+            'client_id' => auth('client-web')->user()->id,
             'status' => 'منتظر',
             'total' =>Cart::subtotal(),
         ]);

@@ -55,6 +55,12 @@ Route::group(['namespace' => 'Front'], function () {
 
         Route::get('auth/{provider}', 'AuthController@redirectToProvider');
         Route::get('auth/{provider}/callback', 'AuthController@handleProviderCallback');
+
+        // favorite
+        Route::get('favorite/{id}','FavoriteController@favorite')->name('favorite');
+        Route::get('favorites','FavoriteController@listFavorite')->name('favorites');
+        Route::delete('favorite/{id}');
+
     });
 });
 

@@ -34,7 +34,7 @@
                     <span>صفحتى الشخصية </span>
                     <i class="far fa-user-circle pl-2"></i>
                 </a>
-                <a href="#">
+                <a href="{{route('favorites')}}">
                     <span>قائمة رغباتى </span>
                     <i class="far fa-heart pl-2"></i>
                 </a>

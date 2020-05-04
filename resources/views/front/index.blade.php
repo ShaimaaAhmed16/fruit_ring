@@ -85,9 +85,16 @@
                     <span class="text-light-green">{{$row->price}}ريال</span>
                 </div>
                 <div class="col-4 text-right">
-                    <a href="#">
-                        <i class="far fa-heart"></i>
-                    </a>
+                    @if(auth()->guard('client-web')->check())
+                    <a href="{{url('favorite/'.$row->id)}}">
+                        <i class="
+                        @if(auth('client-web')->user()->products()->find($row->id))
+                            fas
+                        @else
+                            far
+                        @endif
+                            fa-heart"></i>
+                    </a> @endif
                     <a href="{{route('details',$row->id)}}">
                     <img src="{{asset($row->image)}}" alt="" width="120">
                     </a>

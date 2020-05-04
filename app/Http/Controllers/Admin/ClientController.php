@@ -126,21 +126,21 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    function removedata(Request $request)
-    {
-        $student = Client::find($request->input('id'));
-        if($student->delete())
-        {
-            echo 'Data Deleted';
-        }
-    }
+//    function removedata(Request $request)
+//    {
+//        $student = Client::find($request->input('id'));
+//        if($student->delete())
+//        {
+//            echo 'Data Deleted';
+//        }
+//    }
 
     public function destroy($id )
     {
-//        $record=Client::findOrFail($id);
-//        $record->delete();
-//        flash()->success(' تم الحذف بنجاح');
-//        return redirect()->route('client.index');
+        $record=Client::findOrFail($id);
+        $record->delete();
+        flash()->success(' تم الحذف بنجاح');
+        return redirect()->route('client.index');
 
     }
 
