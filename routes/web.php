@@ -58,7 +58,7 @@ Route::group(['namespace' => 'Front'], function () {
 
         // favorite
         Route::get('favorite/{id}','FavoriteController@favorite')->name('favorite');
-        Route::get('favorites','FavoriteController@listFavorite');
+        Route::get('favorites','FavoriteController@listFavorite')->name('favorites');
         Route::delete('favorite/{id}');
 
     });
