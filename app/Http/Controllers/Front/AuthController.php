@@ -168,7 +168,7 @@ class AuthController extends Controller
         else{
         $user->update([
 
-            'password' =>$user->passord,
+            'password' =>$user->password,
             'name' =>   $request->name,
             'phone' =>   $request->phone,
             'email' =>   $request->email,
