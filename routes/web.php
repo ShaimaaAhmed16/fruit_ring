@@ -56,6 +56,15 @@ Route::group(['namespace' => 'Front'], function () {
 
 });
 
+//favorite
+Route::group(['middleware'=>'auth:client-web','namespace' => 'Front'],function() {
+//    Route::get('favorite/{id}','FavoriteController@favorite')->name('favorite');
+//    Route::get('favorite','FavoriteController@listFavorite');
+
+});
+
+
+
 Route::group(['namespace' => 'Admin'], function () {
     Route::resource('product', 'ProductController');
     Route::resource('client', 'ClientController');
