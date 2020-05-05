@@ -28,6 +28,9 @@ Route::group(['namespace' => 'Front'], function () {
     Route::get('check/code', 'AuthController@checkCode')->name('check.code');
     Route::post('change/password', 'AuthController@changePassword')->name('change.password');
 
+
+    Route::get('home/client', 'MainController@homeClient');
+    Route::get('product/pransh', 'MainController@productPransh')->name('product.pransh');
     Route::get('index', 'MainController@index')->name('index');
     Route::get('main', 'MainController@main')->name('main');
     Route::get('filter', 'MainController@viewFilter')->name('filter');
