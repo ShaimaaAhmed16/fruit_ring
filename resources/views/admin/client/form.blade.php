@@ -14,9 +14,7 @@
     ]) !!}
 
     <label for="password">كلمه السر</label>
-    {!!  Form::text('password',null,[
-        'class'=>'form-control text-right',
-    ]) !!}
+    <input type="password" name="password" class="form-control text-right" >
 </div>
 
 <div class="form-group">

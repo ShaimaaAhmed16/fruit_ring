@@ -21,7 +21,7 @@ $(document).ready(function(){
             });
         }else{
           swal({
-            title: "برجاء إدخال بريد صحيح ",
+            title: "تم التسجيل بنجاح",
             icon: "success",
             button: " !أوافق"
           });
@@ -33,13 +33,17 @@ $(document).ready(function(){
         var email = $("#emai1").val();
         var phone = $("#phone").val();
         var pass = $("#password").val();
+        alert('gggg');
+
         if (email == '' || pass == '' || name =='' || phone == ''){
             swal({
               title: "لا بد من ادخال البيانات",
               icon: "warning",
               button: " !أوافق"
             });
-        }else{
+        }
+        else{
+
           swal({
             title: "تم التسجيل بنجاح",
             icon: "success",
@@ -71,7 +75,7 @@ $(document).ready(function(){
             });
         }else{
             swal({
-                title: "برجاء ادخال الحقول المطلوبه ",
+                title: "تم التسجيل بنجاح ",
                 icon: "success",
                 button: " !أوافق"
             });

@@ -74,7 +74,7 @@
                     <a href="{{url('/home')}}" class="nav-link "><i class="fa fa-home "></i>   الرئسيه</a>
                 </li>
             </ul>
-            <div class="navbar-custom-menu ">
+            <div class="navbar-custom-menu " style="margin-top: 10px;margin-left: 5%;color: white">
                 <ul class="nav navbar-nav  " >
                     <!-- user login dropdown start-->
                     <li class="dropdown  pt-5" >

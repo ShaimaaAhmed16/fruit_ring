@@ -8,4 +8,12 @@ class OrderProduct extends Model
 {
     protected $fillable = ['order_id','product_id','quantity'];
 
+
+    public function order(){
+        return $this->belongsTo('App\Models\Order');
+    }
+
+    public function product(){
+        return $this->belongsTo('App\Models\Product','product_id');
+    }
 }

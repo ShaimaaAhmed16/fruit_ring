@@ -1,15 +1,29 @@
 <nav class="navbar fixed-bottom text-center row bg-gray">
-
-    <div class="nav-item nav-link col">
-        <div>
-            <i class="far fa-user-circle text-silver"></i>
+    @if(auth('client-web')->user())
+        <div class="nav-item nav-link col">
+            <div>
+                <i class="far fa-user-circle text-silver"></i>
+            </div>
+            <a href="{{route('myacount')}}" class="text-silver">
+                <small>
+                    حسابى
+                </small>
+            </a>
         </div>
-        <a href="{{route('myacount')}}" class="text-silver">
-            <small>
-                حسابى
-            </small>
-        </a>
-    </div>
+
+    @else
+        <div class="nav-item nav-link col">
+            <div>
+                <i class="far fa-user-circle text-silver"></i>
+            </div>
+            <a href="#" class="text-silver myBtn2">
+                <small>
+                    حسابى
+                </small>
+            </a>
+        </div>
+    @endif
+
     <div class="nav-item nav-link col">
         <div>
             <i class="fas fa-shopping-basket text-silver"></i> @if(Cart::count() > 0)
@@ -25,7 +39,7 @@
         <div>
             <i class="fas fa-apple-alt text-silver"></i>
         </div>
-        <a href="products.html" class="text-silver">
+        <a href="{{route('product.pransh')}}" class="text-silver">
             <small>
                 منتجاتنا
             </small>
@@ -35,7 +49,7 @@
         <div>
             <i class="fas fa-store-alt text-silver"></i>
         </div>
-        <a href="{{route('index')}}" class="text-silver">
+        <a href="{{route('product.pransh')}}" class="text-silver">
             <small>
                 الرئيسية
             </small>

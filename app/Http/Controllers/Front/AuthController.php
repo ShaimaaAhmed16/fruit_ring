@@ -35,6 +35,7 @@ class AuthController extends Controller
            'phone.required'=>'يرجي كتابه رقم الجوال',
            'ok.required'=>'يجب الموافقه علي الشروط والقوانين',
        ];
+
        $this->validate($request,$rules,$messages);
        $user = Client::create([
            'full_name' => $request->name,
@@ -100,7 +101,7 @@ class AuthController extends Controller
             if ($update) {
                 //send email
                 Mail::to($send->email)
-                    ->bcc('ahmedshaimaa39@gmail.com')
+                    ->bcc('fruit@gmail.com')
                     ->send(new ReaetPassword($code));
                 flash()->message('برجاء فحص الهاتف');
                 return  view('front.send-code');
@@ -160,16 +161,20 @@ class AuthController extends Controller
 
     public function profile(Request $request)
     {
+//        sometimes
         $user = $request->user('client-web');
-        if ($request->has('password')){
+        if ($request->input('password')){
+//            dd('if');
             $request->merge(array('password' => bcrypt($request->password)));
            $user->update($request->all());
         }
         else{
+//            dd('else');
+
         $user->update([
 
-            'password' =>$user->password,
-            'name' =>   $request->name,
+//            'password' =>$user->password,
+            'full_name' =>   $request->name,
             'phone' =>   $request->phone,
             'email' =>   $request->email,
             'address' =>   $request->address,

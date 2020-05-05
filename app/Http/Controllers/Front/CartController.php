@@ -38,7 +38,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
         Cart::add($request->id, $request->name,1, $request->price, 550 )->associate('App\Models\Product');
-        return redirect()->route('cart')->with('success_message','itm add');
+        return redirect()->route('cart')->with('success_message','تم الاضافه الي السله');
     }
     public function empty(){
         Cart::destroy();
@@ -93,6 +93,6 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
-        return back()->with('success_message','itm deleted');
+        return back()->with('success_message','تم الحذف');
     }
 }

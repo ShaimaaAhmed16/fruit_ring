@@ -12,17 +12,20 @@
     {!!  Form::text('wight',null,[
         'class'=>'form-control text-right',"value"=>"{{old('wight')}}"
     ]) !!}
-    <label for="">اختار التصنيف</label>
+
+    @inject('categories','App\Models\Category')
+    <label for="category_id">اختار التصنيف</label>
     {!!  Form::select('category_id',$categories->pluck('name','id')->toArray(),null,[
         'class'=>'form-control text-right'
     ]) !!}
+
     <label for="Image" class="btn-block">صوره المنتج</label>
     @if($model->image)
-    <img src="<?php echo asset($model->image)?>"/>
+    <img src="<?php echo asset($model->image)?>" style="margin-bottom: 10px"/>
     @endif
     <br>
     {!!  Form::file('image',null,[
-        'class'=>'form-control file_upload_preview'
+        'class'=>'form-control file_upload_preview '
     ]) !!}
 
 

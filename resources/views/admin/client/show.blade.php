@@ -24,44 +24,52 @@
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-action">
                                 <div class="row text-right">
+                                    <div class="col-12 col-md-3">
+                                        <p class="m-0 font-weight-bold">
+                                            الاسم بالكامل :
+                                        </p>
+                                    </div>
                                     <div class="col-12 col-md-9">
                                         <p class="m-0">{{$record->full_name}}</p>
                                     </div>
-                                    <div class="col-12 col-md-3">
-                                        <p class="m-0 font-weight-bold">
-                                            :  الاسم بالكامل
-                                        </p>
-                                    </div>
+
 
                                 </div>
                             </li>
                             <li class="list-group-item list-group-item-action">
                                 <div class="row text-right">
+                                    <div class="col-12 col-md-3">
+                                        <p class="m-0 font-weight-bold">
+                                            رقم الهاتف :
+                                        </p>
+                                    </div>
                                     <div class="col-12 col-md-9">
                                         <p class="m-0">{{$record->phone}}</p>
                                     </div>
+
+
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                <div class="row text-right">
                                     <div class="col-12 col-md-3">
-                                        <p class="m-0 font-weight-bold">
-                                            :  رقم الهاتف
+                                        <p class="m-0 font-weight-bold ">
+                                            البريد الالكتروني :
                                         </p>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <p class="m-0">{{$record->email}}</p>
                                     </div>
 
                                 </div>
                             </li>
                             <li class="list-group-item list-group-item-action">
                                 <div class="row text-right">
-                                    <div class="col-12 col-md-9">
-                                        <p class="m-0">{{$record->email}}</p>
-                                    </div>
                                     <div class="col-12 col-md-3">
                                         <p class="m-0 font-weight-bold ">
-                                            :  البريد الالكتروني
+                                              صوره المستخدم :
                                         </p>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item list-group-item-action">
-                                <div class="row text-right">
                                     <div class="col-12 col-md-9">
                                         @if($record->image)
                                             <p class="m-0"><img  style="height: 100px;width: 100px;" src="{{asset($record->image)}}" ></p>
@@ -70,23 +78,21 @@
                                         @endif
 
                                     </div>
-                                    <div class="col-12 col-md-3">
-                                        <p class="m-0 font-weight-bold ">
-                                            :  صوره المستخدم
-                                        </p>
-                                    </div>
+
 
                                 </div>
                             </li>
                             <li class="list-group-item list-group-item-action">
                                 <div class="row ">
-                                    <div class="col-12 col-md-9 ">
-                                        <p class="m-0">{{$record->address}}</p>
-                                    </div> <div class="col-12 col-md-3  text-right">
+                                    <div class="col-12 col-md-3  text-right">
                                         <p class="m-0 font-weight-bold ">
-                                            : العنوان
+                                             العنوان :
                                         </p>
                                     </div>
+                                    <div class="col-12 col-md-9 ">
+                                        <p class="m-0">{{$record->address}}</p>
+                                    </div>
+
                                 </div>
                             </li>
                         </ul>

@@ -54,7 +54,7 @@ class ClientController extends Controller
         ];
         $this->validate($request, $rules, $messages);
         $record = Client::create([
-            'full_name' => $request->name,
+            'full_name' => $request->full_name,
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
@@ -104,15 +104,18 @@ class ClientController extends Controller
     public function update(Request $request, $id)
     {
         $record = Client::findOrFail($id);
-        $record->update($request->except('image'));
-        if ($request->hasFile('image')) {
-            $path = public_path();
-            $destinationPath = $path . '/uploads/image/clients'; // upload path
-            $logo = $request->file('image');
-            $extension = $logo->getClientOriginalExtension(); // getting image extension
-            $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
-            $logo->move($destinationPath, $name); // uploading file to given path
-            $record->update(['image' => 'uploads/image/clients/' . $name]);
+        if ($request->has('password')){
+            $request->merge(array('password' => bcrypt($request->password)));
+            $record->update($request->all());
+        }
+        else{
+            $record->update([
+
+                'password' =>$record->password,
+                'full_name' =>   $request->full_name,
+                'phone' =>   $request->phone,
+                'email' =>   $request->email,
+            ]);
         }
         $record->save();
         flash()->success('تم التعديل بنجاح');

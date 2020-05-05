@@ -38,7 +38,7 @@
                     <span>قائمة رغباتى </span>
                     <i class="far fa-heart pl-2"></i>
                 </a>
-                <a href="shopcart.html">
+                <a href="{{route('cart')}}">
                     <span>سلة التسوق </span>
                     <i class="fas fa-shopping-basket pl-2"></i>
                 </a>

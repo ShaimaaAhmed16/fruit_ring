@@ -28,19 +28,21 @@ Route::group(['namespace' => 'Front'], function () {
     Route::get('check/code', 'AuthController@checkCode')->name('check.code');
     Route::post('change/password', 'AuthController@changePassword')->name('change.password');
 
+    Route::get('home/client', 'MainController@homeClient');
+    Route::get('product/pransh', 'MainController@productPransh')->name('product.pransh');
     Route::get('index', 'MainController@index')->name('index');
     Route::get('main', 'MainController@main')->name('main');
     Route::get('filter', 'MainController@viewFilter')->name('filter');
     Route::get('details/product/{id}', 'MainController@detailsProduct')->name('details');
 
 
+    Route::get('contact/client', 'MainController@viewContact')->name('contact.client');
+    Route::post('contact/client', 'MainController@contact')->name('contact.client');
     Route::group(['middleware'=>'client-web'],function () {
         Route::get('profile-client/{id}', 'AuthController@viewProfile')->name('profile.client');
         Route::post('profile-update/{id}', 'AuthController@profile')->name('profile');
         Route::get('myacount', 'AuthController@myAccount')->name('myacount');
 
-        Route::get('contact/client', 'MainController@viewContact')->name('contact.client');
-        Route::post('contact/client', 'MainController@contact')->name('contact.client');
 
         Route::get('cart', 'CartController@index')->name('cart');
         Route::post('add-cart', 'CartController@store');

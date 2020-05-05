@@ -24,59 +24,62 @@
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-action">
                                 <div class="row text-right">
-                                    <div class="col-12 col-md-9">
-                                        <p class="m-0">{{$record->total}}</p>
-                                    </div>
                                     <div class="col-12 col-md-3">
                                         <p class="m-0 font-weight-bold">
-                                            :  السعر
+                                            السعر :
                                         </p>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <p class="m-0">{{$record->total}} ر.س</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                <div class="row text-right">
+                                    <div class="col-12 col-md-3">
+                                        <p class="m-0 font-weight-bold ">
+                                             اسم المستخدم :
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <p class="m-0">{{optional($record->client)->full_name}}</p>
                                     </div>
 
                                 </div>
                             </li>
                             <li class="list-group-item list-group-item-action">
-                                <div class="row text-right">
-                                    <div class="col-12 col-md-9">
-                                        <p class="m-0">{{$record->client->name}}</p>
+                        @foreach($record->orderProducts as $orderProduct)
+                                <div class="row ">
+                                    <div class="col-12 col-md-3  text-right">
+                                        <p class="m-0 font-weight-bold ">
+                                            اسم المنتج :
+                                        </p>
                                     </div>
+                                    <div class="col-12 col-md-9 ">
+                                        <p class="m-0">{{optional($orderProduct)->product->name}}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                <div class="row text-right">
                                     <div class="col-12 col-md-3">
                                         <p class="m-0 font-weight-bold ">
-                                            : اسم المستخدم
+                                            صوره المنتج :
                                         </p>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item list-group-item-action">
-                                <div class="row ">
-                                    <div class="col-12 col-md-9 ">
-                                        <p class="m-0">{{$record->products()->name}}</p>
-                                    </div> <div class="col-12 col-md-3  text-right">
-                                        <p class="m-0 font-weight-bold ">
-                                            : اسم المنتج
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item list-group-item-action">
-                                <div class="row text-right">
                                     <div class="col-12 col-md-9">
-                                        @if($record->products()->image)
-                                            <p class="m-0"><img  style="height: 100px;width: 100px;" src="{{asset($record->image)}}" ></p>
+                                        @if($orderProduct->product->image)
+                                            <p class="m-0"><img  style="height: 100px;width: 100px;" src="{{asset($orderProduct->product->image)}}" ></p>
                                         @else
                                             <p class="m-0">لايوجد صوره</p>
                                         @endif
 
                                     </div>
-                                    <div class="col-12 col-md-3">
-                                        <p class="m-0 font-weight-bold ">
-                                            :  صوره المنتج
-                                        </p>
-                                    </div>
+
 
                                 </div>
                             </li>
-
+                    @endforeach
                         </ul>
                     </div>
                 </div>

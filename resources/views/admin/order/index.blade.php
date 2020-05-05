@@ -28,9 +28,9 @@
                                 @foreach($records as $record)
                                     <tr>
                                         <th>{{$loop->iteration}}</th>
-                                        <th>{{$record->total}}</th>
+                                        <th>{{$record->total}} ر.س</th>
                                         <th>{{optional($record->client)->full_name}}</th>
-                                        <th> <a href="{{url(route('order.show',$record->id))}}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
+                                        <th> <a href="{{url(route('order.show',$record->id))}}" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
                                         </th>
                                         <th>
                                             @if($record->status == "منتظر")
@@ -40,18 +40,41 @@
                                             @endif
                                         </th >
                                         <th>
-                                            {!! Form::open(['action'=>['Admin\OrderController@destroy',$record->id],'method'=>'delete']) !!}
-                                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
-                                            {!! Form::close() !!}
+                                            <button class="btn btn-danger" data-catid={{$record->id}} data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
                                         </th>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
-                @else
+
+                        <div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title text-center" id="myModalLabel">تاكيد الحذف</h4>
+                                    </div>
+                                    {!! Form::open(['action'=>['Admin\OrderController@destroy',$record->id],'method'=>'delete']) !!}
+                                    <div class="modal-body">
+                                        <p class="text-center">
+                                            هل انت متاكد من الحذف؟
+                                        </p>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">لا</button>
+                                        <button type="submit" class="btn btn-warning">نعم,حذف</button>
+                                    </div>
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+                        </div>
+
+                        @else
                     <div class="alert alert-danger" role="alert">
-                        No data
+                        لايوجد بيانات
                     </div>
                     </div>
                 @endif
@@ -61,4 +84,6 @@
         <!-- /.card -->
 
     </section>
+
+
 @endsection

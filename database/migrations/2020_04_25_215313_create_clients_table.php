@@ -21,7 +21,7 @@ class CreateClientsTable extends Migration
             $table->string('address')->nullable(true);
             $table->string('password');
             $table->string('image')->nullable(true);
-            $table->boolean('status')->nullable(true);
+            $table->boolean('status')->default(0);
             $table->integer('pin_code')->nullable(true);
             $table->timestamps();
         });

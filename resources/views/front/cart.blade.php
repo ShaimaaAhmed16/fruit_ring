@@ -88,7 +88,7 @@
                 <div class="row">
                     <div class="col-6">
                         <span>
-                            السعر : {{$item->price}}  ر.س
+                            السعر : {{$item->price}} ر.س
                         </span>
                         <i class="fas fa-dollar-sign"></i>
                     </div>

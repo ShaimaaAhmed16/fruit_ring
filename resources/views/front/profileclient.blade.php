@@ -134,9 +134,10 @@
                 </div>
                 <div class="form-group text-right">
                     <label class="text-light-green">كلمة المرور</label>
-                    {!!  Form::text('password',null,[
-                     'class'=>'form-control text-right',
-                    ]) !!}
+                    <input type="password" name="password" class="form-control text-right"  placeholder="اذا لم تريد تغييرها اتركها فارغه">
+                    {{--{!!  Form::text('password',null,[--}}
+                     {{--'class'=>'form-control text-right','placeholder'=>'اذا لم تريد تغييرها اتركها فارغه'--}}
+                    {{--]) !!}--}}
                 </div>
 
                 <button type="submit" class="btn btn-block text-white">تحديث</button>

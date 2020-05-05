@@ -19,11 +19,7 @@
             <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="card mb-2 mt-3">
                     <div class="row p-2">
-                        <div class="col-4 text-center">
-                            <a href="#"><i class="fab fa-opencart"></i></a><br>
-                            <button class="btn bg-light-green mt-4 myBtn2"> شراء الآن</button>
-                        </div>
-                        <div class="col-4 text-right">
+                        <div class="col-6 text-right">
                             <h5>تفاح أحمر</h5>
                             <small>
                                 ريال
@@ -32,21 +28,14 @@
                             <span class="ml-4">كرتونة</span>
                             <span class="text-light-green">20ريال</span>
                         </div>
-                        <div class="col-4 text-right">
-                            <a href="#">
-                                <i class="far fa-heart"></i>
-                            </a>
+                        <div class="col-6 text-right">
                             <img src="images/apple.jpg" alt="" width="120">
                         </div>
                     </div>
                 </div>
                 <div class="card mb-2 mt-3">
                     <div class="row p-2">
-                        <div class="col-4 text-center">
-                            <a href="#"><i class="fab fa-opencart"></i></a><br>
-                            <button class="btn bg-light-green mt-4 myBtn2"> شراء الآن</button>
-                        </div>
-                        <div class="col-4 text-right">
+                        <div class="col-6 text-right">
                             <h5>تفاح أحمر</h5>
                             <small>
                                 ريال
@@ -55,10 +44,7 @@
                             <span class="ml-4">كرتونة</span>
                             <span class="text-light-green">20ريال</span>
                         </div>
-                        <div class="col-4 text-right">
-                            <a href="#">
-                                <i class="far fa-heart"></i>
-                            </a>
+                        <div class="col-6 text-right">
                             <img src="images/apple.jpg" alt="" width="120">
                         </div>
                     </div>

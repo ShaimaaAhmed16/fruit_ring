@@ -9,8 +9,10 @@
         <!-- Default box -->
         <div class="card">
             <div class="row margin-bottom">
-                <div class="col-sm-6 ">
-                    <a href="{{url(route('link.create'))}}" class="btn btn-primary"><i class="fa fa-plus"></i>اضافه بيانات التواصل</a>
+                <div class="col-sm-6 " style="margin-bottom: 10px">
+                    <a href="{{url(route('link.create'))}}" class="btn btn-primary"><i class="fa fa-plus"></i>
+                        اضافه بيانات التواصل
+                    </a>
                 </div>
             </div>
             <div class="card-body">
@@ -45,12 +47,10 @@
                                             {{$record->watsUp}}
                                         </th>
                                         <th>
-                                            <a href="{{url(route('link.edit',$record->id))}}" class="btn btn-primary btn-xs" alt="تعديل "><i class="fa fa-edit"></i></a>
+                                            <a href="{{url(route('link.edit',$record->id))}}" class="btn btn-warning btn-xs" alt="تعديل "><i class="fa fa-edit"></i></a>
                                         </th >
                                         <th>
-                                            {!! Form::open(['action'=>['Admin\LinkController@destroy',$record->id],'method'=>'delete']) !!}
-                                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
-                                            {!! Form::close() !!}
+                                            <button class="btn btn-danger" data-catid={{$record->id}} data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
                                         </th>
                                     </tr>
                                 @endforeach
@@ -59,7 +59,7 @@
                     </div>
                 @else
                     <div class="alert alert-danger" role="alert">
-                        No data
+                       لا يوجد بيانات
                     </div>
                     </div>
                 @endif
@@ -69,4 +69,29 @@
         <!-- /.card -->
 
     </section>
+
+    <div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabel">تاكيد الحذف</h4>
+                </div>
+                {!! Form::open(['action'=>['Admin\LinkController@destroy',$record->id],'method'=>'delete']) !!}
+
+                <div class="modal-body">
+                    <p class="text-center">
+                        هل انت متاكد من الحذف؟
+                    </p>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">لا</button>
+                    <button type="submit" class="btn btn-warning">نعم,حذف</button>
+                </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
 @endsection

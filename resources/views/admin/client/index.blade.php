@@ -10,7 +10,7 @@
         <div class="card">
             <div class="row margin-bottom">
                 <div class="col-sm-6 ">
-                    <a href="{{url(route('client.create'))}}" class="btn btn-primary"><i class="fa fa-plus"></i>اضافه مستخدم جديد</a>
+                    <a href="{{url(route('client.create'))}}" class="btn btn-primary"><i class="fa fa-plus"></i> اضافه مستخدم جديد</a>
 
                 </div>
                 <div class="text-right col-sm-6">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="card-body ">
-                <div class="mt-3 text-right">
+                <div class="mt-3 text-right mb-5">
                     @include('flash::message')
                 </div>
                 @if(count($records))
@@ -55,7 +55,7 @@
                                             <span>لايوجد صوره</span>
                                                 @endif
                                         </th>
-                                        <th> <a href="{{url(route('client.show',$record->id))}}" class="btn btn-primary btn-xs"><i class="fas fa-eye"></i></a>
+                                        <th> <a href="{{url(route('client.show',$record->id))}}" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
                                         </th>
                                         <th>
                                             @if($record->status == 0)
@@ -65,19 +65,42 @@
                                                 @endif
                                         </th >
                                         <th>
-                                            <a href="{{url(route('client.edit',$record->id))}}" class="btn btn-primary btn-xs" alt="تعديل المنتج"><i class="fa fa-edit"></i></a>
+                                            <a href="{{url(route('client.edit',$record->id))}}" class="btn btn-warning btn-xs" alt="تعديل المنتج"><i class="fa fa-edit"></i></a>
                                         </th >
                                         <th>
-                                    {{--<a href="#" class="btn btn-xs btn-danger delete" id="'.$student->id.'"><i class="glyphicon glyphicon-remove"></i> Delete</a>--}}
-                                            {!! Form::open(['action'=>['Admin\ClientController@destroy',$record->id],'method'=>'delete']) !!}
 
-                                            <button class="btn btn-danger btn-xs destroy"><i class="fa fa-trash"></i></button>
-                                            {!! Form::close() !!}
+                                            <button class="btn btn-danger" data-catid={{$record->id}} data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
+
                                         </th>
                                     </tr>
+
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+
+                    <div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title text-center" id="myModalLabel">تاكيد الحذف</h4>
+                                </div>
+                                {!! Form::open(['action'=>['Admin\ClientController@destroy',$record->id],'method'=>'delete']) !!}
+                                <div class="modal-body">
+                                    <p class="text-center">
+                                        هل انت متاكد من الحذف؟
+                                    </p>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">لا</button>
+                                    <button type="submit" class="btn btn-warning">نعم,حذف</button>
+                                </div>
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
                     </div>
                 @else
                     <div class="alert alert-danger" role="alert">
@@ -90,4 +113,6 @@
         <!-- /.card -->
 
     </section>
+
+
 @endsection

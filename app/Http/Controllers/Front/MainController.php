@@ -15,6 +15,16 @@ use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
+
+   public function homeClient(){
+       return view('front.home-client');
+   }
+
+    public function productPransh(){
+        return view('front.product-pransh');
+    }
+
+
     public function index(Request $request){
 //        dd(Auth::guard('client-web')->user());
         $categories =Category::all();
