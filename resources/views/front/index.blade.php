@@ -17,6 +17,7 @@
                         {!! Form::close() !!}
                 </div>
             </div>
+
             <div class="row pt-2 pb-1">
                 @foreach($categories as $category)
                 <div class="col-4 text-center">
@@ -36,7 +37,11 @@
 
     </section>
 
+    {{--flash message--}}
+    @include('flash::message')
+
     <section class="container mt-2 filter card">
+
         <div class="row p-2">
             <div class="col-6">
                 <a href="{{route('main')}}"><i class="fas fa-th-large mr-2"></i></a>
@@ -54,6 +59,7 @@
 
     @if(count($rows))
     <div id="" class="container mt-2 content">
+
         @foreach($rows as $row)
             <div class="card mb-2">
             <div class="row p-2">
