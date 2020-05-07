@@ -13,7 +13,7 @@
     <img src="{{asset('front/images/tt.png')}}" alt="" width="400">
     <h1 class="text-light-green">حلقة الثمار</h1>
     <div class="btn-group mt-4" role="group" aria-label="Basic example">
-        <a href="{{route('index')}}" type="button" class="btn">عربى</a>
+        <a href="{{route('login.client')}}" type="button" class="btn">عربى</a>
     </div><br><br>
     <a href="{{route('product.pransh')}}" class="btn bg-light-green text-white"> الدخول ك زائر</a>
 </section>

@@ -47,7 +47,7 @@
 
                 </div>
                 <div class="text-center">
-                    <button type="submit" id="myBtn1" class="btn btn-block text-white bg-light-green mb-1">تسجيل حساب جديد</button>
+                    <button type="submit" class="btn btn-block text-white bg-light-green mb-1">تسجيل حساب جديد</button>
                 </div><br>
                 <hr>
                 <div class="d-flex justify-content-around ">

@@ -49,7 +49,7 @@
         <div>
             <i class="fas fa-store-alt text-silver"></i>
         </div>
-        <a href="{{route('product.pransh')}}" class="text-silver">
+        <a href="{{route('index')}}" class="text-silver">
             <small>
                 الرئيسية
             </small>

@@ -50,14 +50,15 @@
 <!-- Site wrapper -->
 <div class="wrapper">
 
-    <header class="main-header" >
+    <header class="main-header " >
         <!-- Logo -->
+
         <a href="" class="logo" style="background-color:   #00e600 !important;">
             <!-- logo for regular state and mobile devices -->
             <img src="{{asset('adminlte/dist/img/tt.png')}}"
                  alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
-                 style="opacity: .8" width="60">
+                 style="opacity: .8" width="55">
             <span class="brand-text font-weight-light">الثمار الوطنيه جده</span>
         </a >
         <!-- Header Navbar: style can be found in header.less -->
@@ -69,28 +70,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <ul class="nav navbar-nav">
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{url('/home')}}" class="nav-link "><i class="fa fa-home "></i>   الرئسيه</a>
+            <ul>
+                <li class="nav-item  " style="list-style: none;margin-top: 15px ;display: inline ;float: right">
+                    <a href="{{url('/home')}}" class="nav-link " style="color: white"><i class="fa fa-home "></i>   الرئسيه</a>
                 </li>
-            </ul>
-            <div class="navbar-custom-menu " style="margin-top: 10px;margin-left: 5%;color: white">
-                <ul class="nav navbar-nav  " >
-                    <!-- user login dropdown start-->
-                    <li class="dropdown  pt-5" >
+
+                    <li class="nav-item dropdown " style="list-style: none;margin-top: 15px ;display: inline ;float: left;margin-left: 13% ;color: white">
                         <ul data-toggle="dropdown" class="dropdown-toggle  " href="#"  >
                             <span class="username ">{{auth()->guard('web')->user()->name}}</span>
                             <b class="caret"></b>
                         </ul>
-                        <ul class="dropdown-menu extended logout text-center mr-1">
+                        <ul class="dropdown-menu extended logout text-center " style="background-color:limegreen">
                            <li><a href="{{route('profile.user',auth()->guard('web')->user()->id)}}"><i class="fa fa-user"></i> ملفي الشخصي</a></li>
                             <li><a href="{{route('change.password')}}"><i class="fa fa-key"></i>تعديل كلمه السر</a></li><hr>
                             <li><a href="{{route('logout.admin')}}"><i class="fa fa-arrow"></i>تسجيل خروج</a></li>
                         </ul>
                     </li>
 
-                </ul>
-            </div>
+            </ul>
         </nav>
     </header>
 

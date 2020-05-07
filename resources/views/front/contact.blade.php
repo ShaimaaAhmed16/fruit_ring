@@ -2,6 +2,7 @@
 @include('front.header')
 @section('content')
 <section class="contact container">
+    @if(count($row))
     <div class="card text-right pr-4">
         <div class="row">
             <div class="col-12">
@@ -22,7 +23,7 @@
             </div>
         </div>
     </div>
-
+    @endif
     <form method="post" action="{{route('contact.client')}}">
         @csrf
         @if ($errors->any())
